@@ -1,0 +1,1241 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color:#8CBCDB;
+}
+
+/*pequeños reseteos*/
+h1,h2,h3,h4{
+    margin: 0px;
+    padding: 10px;
+}
+
+/*contenedor general*/
+.container{
+    margin: auto;
+    width: 90%;
+}
+
+/*Se le da estilo a la barra de menú que se utiliza en todas las secciones de la página web */
+header{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.logo{
+    color:#fff;
+    text-decoration: none;
+    text-transform:uppercase;
+    background:#B5C0DB;
+    border-radius: 5px;
+    padding:8px 15px;
+    font-family: "Cinzel", serif;
+    font: weight 100px;
+}
+
+/* hover sobre logo, intuitivo para hacer click */
+.logo:hover {
+    color: #5651B0;
+    background-color: #fff;
+    
+}
+
+/* barra del menu con lista  se utiliza la misma en cada sección de la web*/
+ header .navbar{
+    display: flex;
+    padding: 0.5em;
+ }
+header .navbar li{
+    list-style: none;
+    text-align: center;
+}
+
+header .navbar li a{
+   text-decoration: none;
+   color:#fff;
+   font-weight: 600;
+   padding: 10px;
+   transition: 2s;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.quien{
+    background-color: #73a1f0;
+}
+header .navbar li a:hover{
+    border-bottom:1px solid #5651B0;
+}
+
+header .navbar li .quien:hover{ 
+    background-color:#5651B0 ;
+    
+}
+
+
+
+.ul-second {
+   display: none;
+   position: absolute;
+}
+
+.ul-second .quien{
+    width: 190px;
+    transform: translate(-20px,10px);
+    text-align: center;
+    text-decoration: none;
+   color:#fff;
+   font-weight: 600;
+   padding: 8px;
+   transition: 0.9s;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+li:hover .ul-second{
+display: block;
+}
+/*Configuramos la parte de "main"*/
+/* Se utiliza el "flex-wrap" pensando en que la web sea responsive, y al disminuir el tamaño de la pantalla tambien disminuya o bajen a la siguiente linea los elementos */
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main section{
+    width: 100%;
+}
+
+/* La idea es que las imagenes a pesar de estar organizadas en una fila al lado de la otra ocupen solo el 70% de la <section>, al tener la propiedad 
+flex-wrap: 2 imagenes se desplazarán hacia abajo */
+section.images{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    background-color: #fff;
+    border-radius: 30% 60% 20% 70%;
+
+}
+/* He puesto la propiedad relative porque quiero mover las imagenes de tal forma que parezca que estan dispersas y no en linea recta, 
+para eso utilizo las propiedades top y left respectivamente*/
+
+main img{
+   width: 32%;
+   position: relative;
+}
+
+.img3{
+   top:10%;
+}
+.img4{
+    top:-20%;
+    left:20%;
+} 
+
+.img5{
+    width: 34%;
+    left:20%;
+} 
+/* Para darle movimiento a la página en cuanto el ratón pase por encima de ellas aumentan de tamño en 1.5 */
+.images img:hover, .titulo:hover{
+    transform: scale(1.5);
+}
+
+/* El título también tiene position relative para que acompañe a las imágenes en un estilo disperso */
+section.titulo{
+    width:30%;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    right: 3%;
+    font-family: "Cinzel", serif;
+    text-align:center;
+    justify-content: center;
+    margin: auto;
+    background-color:#B5C0DB;
+    border-radius: 55% 20% 70% 25%;
+}
+
+h1{
+    font-size: xx-large;
+   
+}
+/* este estilo de copyright se utiliza en todas las secciones de la web*/
+section .copyright{
+    width: 100%;
+    margin: 2% auto;
+    text-align: center;
+}
+.copyright p{
+    font-size: 0.7em;
+    color:#5651B0;
+}
+
+/* ---------------------------------------------------------------------------RESPONSIVE PARA INDEX ----------------------------------------------------------------------*/
+@media screen AND (min-width:320px) and (max-width:576px) {
+    
+    /* Centrado del logo y la barra para que este primero el logo ocupando 100% del espacio y abajo la barra ocupando el 100% del espacio*/
+    header{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    header .navbar{
+        display: flex;
+        padding: 0.5em;
+        width: 100%;
+        margin: auto;
+        justify-content: space-around;
+        text-align: center;
+     }
+
+.ul-second {
+    display: flex;
+    position: relative;
+}
+
+.ul-second .quien{
+    width: 100px;
+    padding: 0px;
+    background-color: #03445e00;
+}
+
+    main section{
+        width: 80%;
+        margin: auto;
+    }
+
+    section.images{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    /*He dejado solo una imagen visible para que no se vea sobrecargado en una pantalla tan pequeña */
+    .img1, .img2,.img3, .img5{
+        display: none;
+    }
+    main img{
+        width: 50%;
+        position: static;
+        margin: auto;
+     }
+     /*El título ocupa el 100% del espacio abajo de la imagen y la barra de menú */
+     section.titulo{
+        width:100%;
+        height: 250px;
+        display: flex;
+        flex-wrap: wrap;
+        text-align:center;
+        justify-content: center;
+        margin: auto;
+
+    }
+    
+}
+
+
+/* ----------------------------------------------------------------CV!!!!!!--------------------------------------------------------------- */
+
+
+/*En la misma sección la imagen y la descripción ocupan una misma línea */
+section.sobre_mi{
+width: 90%;
+display: flex;
+justify-content: space-around;
+background-color: #E8DFCA;
+border-radius: 80% 35% 68% 25%;
+margin: auto;
+}
+
+section.sobre_mi img{
+    width: 20%;
+    height: 300px;
+    border:10px solid #B5C0DB;
+    border-radius: 45% 75% 35% 95% ;
+}
+
+section.sobre_mi div{
+    width: 60%;
+    text-align: center;
+    font-family: "Cinzel", serif;
+    margin: auto;
+}
+
+/* Los datos se posicionan justo debajo de la imagen*/
+/* para que datos los datos y las competencias se muestren en la misma línea se cambia el width 25% de la sección.datos +75% seccion.competencias*/
+section.datos{
+    background-color: aliceblue;
+    border-radius: 100% 58% 92% 44%;
+    width: 25%;
+    text-align: center;
+    justify-content: center;
+    font-family: "Cinzel", serif;
+    margin: auto;
+    padding: 1%;
+    
+}
+
+section.datos li{
+    list-style: none;
+}
+
+section.competencias{
+    background-color: aliceblue;
+    border-radius: 15% 35% 35% 15%;
+    width: 75%;
+    display: flex;
+    float: left;
+    justify-content: space-around;
+    margin:auto;
+
+}
+/* Los div de las competencias se distribuyen en el espacio usando width: para que ocupen la misma línea */
+.technical, .habilidades, .mas{ 
+    width:23%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color:#b5c0db97;
+    border-radius: 100% 92% 98% 88%;
+}
+
+.pequeñas img{
+    width: 100px;
+    height: 100px;
+}
+
+.pequeñas img~span{
+    display: block;
+    margin:0%;
+    padding: 6%;
+    text-align: center;
+    font-family: "Cinzel", serif;
+    font-weight: 600;
+} 
+/*La lista de competencias está oculta y se mostraran al hacer hover en la imagen  */
+.ul2{
+    display: none;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    
+}
+
+.ul2 li{
+    width: 200px;
+    background-color:#8CBCDB;
+    border-bottom:1px solid #0378A6;
+    font-family: "Cinzel", serif;
+    font-size:medium;
+    text-align: center;
+    transition:all 3s;
+}
+
+.technical:hover .ul2,.habilidades:hover .ul2, .mas:hover .ul2 {
+    display: block;
+    transform: translateX(-8px)
+    
+}  
+
+/* Lo siguiente son dos secciones: Educacion y Experiencia, distribuidas para que parezcan un cuadro DAFO*/
+section.educacion{
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+}
+
+section.educacion .cuadroEd{
+    width: 25%;
+    padding: 2.5%;
+    background-color: aliceblue;
+    border-radius: 100% 58% 92% 44%;
+    font-family: "Cinzel", serif;
+    margin: auto;
+}
+
+
+
+section.educacion .formal{
+    width:37.5% ;
+    height: 100%;
+    background-color: #8CDBD1;
+    font-family: "Cinzel", serif;
+    border-radius: 45% 0% 0% 0%;
+}
+section li{
+    list-style: none;
+}
+
+section.educacion .informal{
+    width:37.5% ;
+    height: 100%;
+    background-color: #0da5e1;
+    font-family: "Cinzel", serif;
+    border-radius: 0% 65% 0% 0%;
+}
+
+section.experiencia{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-family: "Cinzel", serif;
+}
+section.experiencia .cuadroEx{
+    width: 25%;
+    padding: 2.5%;
+    background-color: aliceblue;
+    border-radius: 100% 58% 92% 44%;
+    font-family: "Cinzel", serif;
+}
+section.experiencia .formal1{
+    width:37.5% ;
+    height: 100%;
+    background-color: #347690;
+    font-family: "Cinzel", serif;
+    border-radius: 0% 0% 10% 60%;
+    padding: 10px;
+}
+section.experiencia .informal1{
+    width:37.5% ;
+    height: 100%;
+    background-color: #8CDBA4;
+    font-family: "Cinzel", serif;
+    border-radius: 0% 0% 75% 10%;
+    padding: 10px;
+}
+
+.formal:hover, .formal1:hover, .informal:hover, .informal1:hover{
+    transform: scale(1.1);
+} 
+
+/* -----------------------------------------------------------Responsive CV---------------------------------------------------------------------------------- */
+
+/* Desde la pantalla más pequeña se deja la web en su formato más simple, sin foto ni descripción, solo el título */
+
+
+@media screen  and (max-width:576px){
+
+       
+    header{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    header .navbar{
+        display: flex;
+        padding: 0.5em;
+        width: 100%;
+        margin: auto;
+        justify-content: space-around;
+        text-align: center;
+     }
+
+.ul-second {
+    display: flex;
+    position: relative;
+}
+
+.ul-second .quien{
+    width: 100px;
+    padding: 0px;
+    background-color: #03445e00;
+}
+
+section.sobre_mi{
+    width: 90%;
+    display: flex;
+    float: left;
+    justify-content: center;
+    background-color: #E8DFCA;
+    border-radius: 80% 35% 68% 25%;
+    margin: 5% auto;
+    }
+
+
+    section.sobre_mi img{
+        display: none;
+    }
+
+    section.sobre_mi div p{
+       display: none;
+    }
+
+    section.sobre_mi div h1{
+        font-size: large;
+        padding: 10%;
+    }
+
+    section.datos{
+        background-color: aliceblue;
+        border-radius: 100% 58% 92% 44%;
+        width: 90%;
+        justify-content: center;
+        text-align: center;
+        margin:auto;
+        padding: 4%;
+        
+    }
+
+        section.datos ul{
+        font-size:small;
+        padding: 0%;
+        margin: 0%;
+    
+    }
+
+    /*En las competencias dejamos la lista desplegada sin necesidad de hover y una debajo de la otra como en una fila utilizando la propiedad flex-wrap:wrap */
+    section.competencias{
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin:auto;
+    
+    }
+    /* Se utiliza la propiedad float:left: para que la lista de competencias aparezca a un ladod e la imagen; */
+    .technical, .habilidades, .mas{ 
+        display: flex;
+        float: left;
+        width:90%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .pequeñas img~span{
+        margin:0%;
+        padding: 6%;
+        text-align: center;
+        font-family: "Cinzel", serif;
+        font-weight: 300;
+        font-size: small;
+    } 
+
+    .ul2{
+        display: block;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        list-style: none;
+        padding: 0%;
+        
+    }
+    
+    .ul2 li{
+        width: 120px;
+        font-size:small;
+        text-align: center;
+        align-items: center;
+    }
+
+    /*Tanto para educación como para experiencia  se aumenta el width y se hace uso de flex-wrap para que aparezcan una debajo de la otra en forma de fila */
+section.educacion{
+    margin-top: 2%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+}
+
+section.educacion .cuadroEd{
+    width: 50%;
+    padding: 2.5%;
+    margin: auto;
+}
+
+
+
+section.educacion .formal{
+    width:80% ;
+    margin: auto;
+}
+
+
+section.educacion .informal{
+    width:80% ;
+    margin: auto;
+
+}
+
+section.experiencia{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+}
+section.experiencia .cuadroEx{
+    width: 50%;
+    padding: 2.5%;
+    margin:auto;
+}
+section.experiencia .formal1{
+    width:80% ;
+    padding: 10px;
+    margin: auto;
+}
+section.experiencia .informal1{
+    width:80% ;
+    padding: 10px;
+    margin: auto;
+}
+
+}
+
+/* a  medida que aumenta el tamaño de la pantalla se agrega la descripción de la cabecera y finalmente la imagen*/
+
+@media screen AND (min-width:577px) and (max-width:768px){
+    header{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    header .navbar{
+        display: flex;
+        padding: 0.5em;
+        width: 100%;
+        margin: auto;
+        justify-content: space-around;
+        text-align: center;
+     }
+
+.ul-second {
+    display: flex;
+    position: relative;
+}
+
+.ul-second .quien{
+    width: 100px;
+    padding: 0px;
+    background-color: #03445e00;
+}
+
+section.sobre_mi{
+    width: 100%;
+    display: flex;
+    float: left;
+    justify-content: center;
+    background-color: #E8DFCA;
+    border-radius: 80% 35% 68% 25%;
+    margin: 5% auto;
+    }
+
+
+    section.sobre_mi img{
+        display: none;
+    }
+    section.sobre_mi div{
+        width: 95%;
+        margin: 0% auto;
+    }
+
+    section.sobre_mi div p{
+       display: flex;
+       text-align: center;
+       width: 100%;
+    }
+
+    section.sobre_mi div h1{
+        font-size: large;
+        padding: 4%;
+    }
+
+    section.datos{
+        background-color: aliceblue;
+        border-radius: 100% 58% 92% 44%;
+        width: 90%;
+        justify-content: center;
+        text-align: center;
+        margin:auto;
+        padding: 4%;
+        
+    }
+
+        section.datos ul{
+        font-size:small;
+        padding: 0%;
+        margin: 0%;
+    
+    }
+
+    section.competencias{
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin:auto;
+    
+    }
+
+    .technical, .habilidades, .mas{ 
+        display: flex;
+        float: left;
+        width:90%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .pequeñas img~span{
+        margin:0%;
+        padding: 6%;
+        text-align: center;
+        font-family: "Cinzel", serif;
+        font-weight: 300;
+        font-size: small;
+    } 
+
+    .ul2{
+        display: block;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        list-style: none;
+        padding: 0%;
+        
+    }
+    
+    .ul2 li{
+        width: 120px;
+        font-size:small;
+        text-align: center;
+        align-items: center;
+    }
+
+        
+section.educacion{
+    margin-top: 2%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+}
+
+section.educacion .cuadroEd{
+    width: 50%;
+    padding: 2.5%;
+    margin: auto;
+}
+
+
+
+section.educacion .formal{
+    width:80% ;
+    height: 100%;
+    margin: auto;
+}
+
+
+section.educacion .informal{
+    width:80% ;
+    height: 100%;
+    margin: auto;
+
+}
+
+section.experiencia{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+}
+section.experiencia .cuadroEx{
+    width: 50%;
+    padding: 2.5%;
+    margin:auto;
+}
+section.experiencia .formal1{
+    width:80% ;
+    height: 100%;
+    padding: 10px;
+    margin: auto;
+}
+section.experiencia .informal1{
+    width:80% ;
+    height: 100%;
+    padding: 10px;
+    margin: auto;
+}
+
+}
+
+/*------------------------------------------------------------ ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Contacto!!!!!!!!!!!!!!!---------------------------------------------------------------------------------------------------------- */
+/*Formulario sencillo de contacto que envia los datos a un correo, las imagenes de las redes sociales se expanden al hacer hover en ellas 
+y se puede enviar correo directamente al presionar el icono de gmail */
+section.info{
+    width: 60%;
+    text-align: center;
+    align-items: center;
+    padding: 2.5%;
+    margin-top: 5%;
+    background-color:#fff;
+    font-family: "Cinzel", serif;
+    border-radius: 35% 0% 0% 52%;
+   
+}
+
+section.info p{
+    width: 90%;
+    margin: auto;
+    
+}
+
+section.info .imgBox2{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+section.info .imgBox2 img{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+section.info .imgBox2 img:hover{
+    transform:scale(1.2);
+}
+section.info .imgBox2 span{
+    display: none;
+}
+section.info .imgBox2 .telf:hover span{
+    display: block;
+    background-color: #E8DFCA;
+}
+
+section.form{
+    width: 40%;
+    align-items: center;
+    background-color: #5651B0;
+    margin-top: 5%;
+    font-family: "Cinzel", serif;
+    border-radius: 0% 35% 32% 0%;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin: auto;
+    align-items: center;
+    
+}
+
+form label{
+    padding: 5px;
+    text-align: left;
+    margin: auto;
+}
+
+form input, form select, form textarea{
+    width: 25em;
+    height: 40%;
+    margin-top: 2%;
+    background-color: #E8DFCA;
+
+}
+
+ #submit{
+    width: 30%;
+}
+
+/*En su versión más pequeña la sección de la info esta arriba, se oculta el parrafo y el formulario de contacto abajo */
+
+@media screen and (max-width:576px){
+    header{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    header .navbar{
+        display: flex;
+        padding: 0.5em;
+        width: 100%;
+        margin: auto;
+        justify-content: space-around;
+        text-align: center;
+     }
+
+.ul-second {
+    display: flex;
+    position: relative;
+}
+
+.ul-second .quien{
+    width: 100px;
+    padding: 0px;
+    background-color: #03445e00;
+}
+
+section.info{
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5%;
+    margin-top: 5%;
+    border-radius: 35% 52% 35% 52%;
+    }
+
+    section.info h1{
+        font-size: large;
+        width: 100%;
+        padding: 10%;
+        text-align: center;
+        margin: auto;
+    }
+    section.info h4{
+        font-size: medium;
+        width: 100%;
+        text-align: center;
+    }
+    section.info p{
+       display: none;
+    }
+    section.form{
+        width: 90%;
+        align-items: center;
+        margin-top: 5%;
+        border-radius: 52% 35% 52% 35%;
+        padding: 5%;
+    }
+
+    form input, form select, form textarea{
+        width: 15em;
+        height: 40%;
+        margin-top: 2%;
+        background-color: #E8DFCA;
+    
+    }
+    
+    #submit{
+        width: 30%;
+    }
+    
+
+}
+/* Al aumentar el tamaño aprece el párrafo y finalmente se distribuyen una al lado de la otra*/
+@media screen and (min-width:577px) and (max-width:768px){
+
+section.info{
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5%;
+    margin: 5% auto;
+    border-radius: 35% 52% 35% 52%;
+    }
+
+    section.info h1{
+        font-size: large;
+        width: 100%;
+        padding: 5%;
+        text-align: center;
+        margin: auto;
+    }
+    section.info h4{
+        font-size: medium;
+        width: 100%;
+        text-align: center;
+    }
+    section.info p{
+       display: flex;
+       justify-content: center;
+       text-align: justify;
+    }
+    section.form{
+        width: 90%;
+        align-items: center;
+        margin: 2% auto;
+        border-radius: 52% 35% 52% 35%;
+    }
+
+    form input, form select, form textarea{
+        width: 20em;
+        height: 40%;
+        margin-top: 2%;
+        padding: 2%;
+    
+    }
+    
+    #submit{
+        width: 30%;
+    }
+    
+        
+}
+
+@media screen and (min-width:769px) and (max-width:1100px){
+    form input, form select, form textarea{
+        width: 15em;
+        height: 30%;
+        margin-top: 2%;
+        padding: 2%;
+    
+    }
+
+}
+
+/* ---------------------------------------------------------------------------Proyectos---------------------------------------------------------------------------------------------------------------- */
+.cabecera{
+    width:60%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin:2% auto;
+    font-family: "Cinzel", serif;
+    color:#03445e;
+    background-color: #fff;
+    padding: 2%;
+    border-radius: 70% 35% 59% 28%;
+}
+/*Se distribuyen las asignaturas en 4 cuadrados que muestran las imagenes de los últimos proyectos de cada asignatura, al hacer :hover en una sobresale por encima del resto.
+Si se clickean las imagenes de 'Lenguaje de Marcas' redirecciona a los proyectos creados durante el curso */
+.asignaturas{
+    
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin:1% auto;
+    border-radius: 20% 45% 28% 38%;
+}
+
+.asignaturas .leng,.asignaturas .program,.asignaturas .sistem, .asignaturas .bbdd{
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    width: 100%;
+    padding: 2%;
+    justify-content: center;
+    
+}
+.asignaturas .leng{
+    background-color: #8cdba496;
+    border-radius: 54% 25% 37% 49%;
+    margin: auto;
+}
+
+.asignaturas .program{
+    background-color:#73a1f097;
+    margin-top: 2 auto;
+    border-radius: 29% 54% 25% 37%;
+}
+.asignaturas .sistem{
+    background-color: #0da5e18d;
+    margin-top: 2% auto;
+    border-radius: 54% 25% 37% 49%;
+}
+.asignaturas .bbdd{
+    background-color: #8cdbd187;
+    margin: 2% auto;
+    border-radius:29% 54% 25% 37%;
+}
+
+/* divs que contienen las imágenes */
+.image {
+    position: relative;
+    width: 35%;
+    height: 25%;
+    margin: 0.5%;
+}
+
+.image:hover{
+    transform:scale(1.2);
+    z-index: 8;
+}
+
+.image:hover h5{
+    background-color: #8CDBA4;
+}
+
+.image img{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    object-fit:fill;
+    border-radius: 10%;
+}
+
+.image h5{
+    position: absolute;
+    bottom: 0%;
+    z-index: 5;
+    width: 100%;
+    height: auto;
+    line-height: auto;
+    text-align: center;
+    background-color: #5651B0;
+    font-family: "Cinzel", serif;
+    font-size: large;
+}
+
+ .asignaturas .nombre {
+    width: 35%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffffc7;
+    padding: 5%;
+    border-radius: 45% 58% 32% 52%;
+    font-family: "Cinzel", serif;
+}
+/*De nuevo la página pasa de su forma más sencillo de un titulo sin descripción e imagenes en fila, a su versión completa */
+@media screen and (max-width:576px) {
+    header{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    header .navbar{
+        display: flex;
+        padding: 0.5em;
+        width: 100%;
+        margin: auto;
+        justify-content: space-around;
+        text-align: center;
+     }
+
+.ul-second {
+    display: flex;
+    position: relative;
+}
+
+.ul-second .quien{
+    width: 100px;
+    padding: 0px;
+    background-color: #03445e00;
+}
+
+.cabecera h1{
+    font-size: large;
+}
+.cabecera p{
+    display: none;
+}
+
+.asignaturas .leng,.asignaturas .program,.asignaturas .sistem, .asignaturas .bbdd{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    padding: 2%;
+    justify-content: center;
+    
+}
+.image {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    margin: 0.5%;
+}
+
+.image h5{
+    position: absolute;
+    bottom: 0%;
+    z-index: 5;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: small;
+}
+
+.asignaturas .nombre {
+    width: 65%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+}
+
+@media screen and (min-width:577px) and (max-width:768px){
+    .cabecera p{
+        display: none;
+    }
+
+    .asignaturas .leng,.asignaturas .program,.asignaturas .sistem, .asignaturas .bbdd{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 2%;
+        justify-content: center;
+        
+    }
+
+    .image {
+        position: relative;
+        width: 45%;
+        height: 20%;
+        margin: 0.5%;
+    }
+
+    .asignaturas .nombre {
+        width: 45%;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .image h5{
+        position: absolute;
+        bottom: 0%;
+        z-index: 5;
+        width: 100%;
+        height: auto;
+        line-height: auto;
+        text-align: center;
+        font-size: small;
+    }
+
+    @media screen and (min-width:577px) and (max-width:768px){
+
+}
+
+
+}

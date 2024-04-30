@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link  rel="icon" href="img/icons8-desarrollo-backend-64.png"     type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <div class="container"> 
+        <header>
+            <a href="index.html" class="logo">Stephanie Dos Santos</a>
+            <ul class="navbar">
+                <li><a href="#">Quién Soy</a>
+                    <ul class="ul-second">
+                        <li class="quien"><a href="proyectos.html">Proyectos</a></li>
+                    </ul>
+                </li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="formulario.html">Contacto</a></li>
+            </ul>
+        </header>
+    <main> 
+    <section class="info">    
+        <h1>Contacto</h1>
+        <h4>Rellena el siguiente formulario para ponernos en contacto.</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ut vero tempora cupiditate nemo ipsam numquam et ex! Quia esse nemo necessitatibus maiores nulla ipsa voluptatum alias hic quos libero.</p>
+        <div class="imgBox2">
+            <a href="https://www.linkedin.com/in/stephanie-dos-santos-461a54253/"> <img src="img/linkedIn_PNG7.png" class="icon"></a>
+            <a href="mailto:valesillodossantos@gmail.com"> <img src="img/gmail_logo_PNG1.png" class="icon"></a>
+            <div class="telf">  
+            <img src="img/phone_PNG48921.png" class="icon"> <span class="overlay">Llamar al +34 555-5555</span>
+            </div>
+        </div>
+     </section>
+        <section class="form"> 
+            <form action="mailto:valesillodossantos@gmail.com" class="forma" method="post" name="formulario" enctype="multipart/form-data"> 
+                <label for="nombre">Nombre y Apellidos:<br>
+                     <input type="text" placeholder="Ejemplo: Stephanie Dos Santos" width="200px" id="nombre" required></label>
+                <label for="mail">Correo electrónico:<br>
+                    <input type="email" placeholder="tucorreo@ejemplo.com" id="mail" required></label> 
+                <label for="telefono">Telefono:<br>
+                    <input type="tel" placeholder=""></label> 
+                <label for="asunto">Asunto:<br>
+                <select name="Asunto" id="asunto">
+                    <option value="1">Cliente</option>
+                    <option value="2">Propuesta laboral</option>
+                    <option value="3">Consulta</option>
+                </select>
+                </label>
+                <label for="mensaje">¿Algo que contar?<br>
+                    <textarea id="mensaje" name="mensaje" placeholder="Queremos saber más sobre..."></textarea>
+                </label>
+                <input type="submit" value="Enviar formulario" id="submit">
+            </form>
+        </section>
+    </main>
+    <section class="copyright">    
+    <div class="copyright">
+        <p>Pagina creada para la asignatura de "Lenguaje de Marcas". 04-2024</p>
+        <ion-icon name="logo-linkedin"></ion-icon>
+        <ion-icon name="logo-google"></ion-icon>
+    </div>
+    </section>
+    
+</div>
+</body>
+</html>
